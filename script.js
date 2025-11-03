@@ -16,30 +16,143 @@ window.onload = function(){
 
   // --- Multi-language content ---
   const LANG = {
-    en: {
-      title: "MKF Prescriptions",
-      subtitle: "Select your symptoms to get recommended medicine",
-      analyze: "Analyze & Save",
-      disclaimer: "Property of MKF Innovations®",
-      symptoms: ["Fever","Cough","Runny Nose","Sore Throat","Body Ache","Headache","Fatigue","Nausea","Rash","Sneezing","Cold","Burning Urine","Yellow Eyes"],
-      conditions: [
-        {keywords:["fever","cough","sore throat"],diagnosis:"Flu",medicine:"Paracetamol",dosage:"500mg",frequency:"Every 6 hours",duration:"5 days",warning:"Rest and hydrate."},
-        {keywords:["runny nose","sneezing","cold"],diagnosis:"Common Cold",medicine:"Paracetamol",dosage:"500mg",frequency:"Every 6 hours",duration:"3 days",warning:"Consult if persists."},
-        {keywords:["burning urine","frequent urination"],diagnosis:"UTI",medicine:"Ciprofloxacin",dosage:"500mg",frequency:"Twice daily",duration:"7 days",warning:"Take full course."}
-      ]
-    },
-    ck: {
-      title: "MKF پەسکریپشنەکان",
-      subtitle: "نیشانی نەخۆشیەکان هەڵبژێرە بۆ وەسڵکردنی دەرمان",
-      analyze: "هەڵسەنگاندن و خەزنکردن",
-      disclaimer: "سەرمایەی MKF Innovations®",
-      symptoms: ["تا","کۆکە","بەڵغەمی زەرد","ناوڕووی دەنگ","تاقیکردن","دەردی بەرز","سردرد","خستەوە","ڕەش","سێنەکەوتن","ساردی","هێڵی تیشک","چاوە زەرد"],
-      conditions: [
-        {keywords:["تا","کۆکە","بەڵغەمی زەرد"],diagnosis:"فلو",medicine:"پەرەسیتامۆل",dosage:"500mg",frequency:"هەر 6 کاتژمێر",duration:"5 ڕۆژ",warning:"ئاستن و خواردنی خۆراک."},
-        {keywords:["ناوڕووی دەنگ","سێنەکەوتن","ساردی"],diagnosis:"ساردی گشتی",medicine:"پەرەسیتامۆل",dosage:"500mg",frequency:"هەر 6 کاتژمێر",duration:"3 ڕۆژ",warning:"ئەگەر بەردەوام بوو پزیشک ببینە."},
-        {keywords:["هێڵی تیشک","خستەوە"],diagnosis:"UTI",medicine:"سێپروفلوکساسین",dosage:"500mg",frequency:"دوو جار لە ڕۆژ",duration:"7 ڕۆژ",warning:"فڕۆشتنی تەواو بەجێبهێنرە."}
-      ]
-    }
+   const LANG = {
+  en: {
+    title: "MKF Prescriptions",
+    subtitle: "Select your symptoms to get recommended medicine",
+    analyze: "Analyze & Save",
+    disclaimer: "Property of MKF Innovations®",
+    symptoms: [
+      "Fever", "Cough", "Runny Nose", "Sore Throat", "Body Ache", "Headache", "Fatigue", 
+      "Nausea", "Vomiting", "Diarrhea", "Rash", "Itching", "Shortness of Breath", 
+      "Chest Pain", "Burning Urine", "Frequent Urination", "Yellow Eyes", "Red Eyes", 
+      "Night Sweats", "Cold", "Sneezing", "Abdominal Pain", "Joint Pain", "Back Pain",
+      "Sensitivity to Light", "Stiff Neck", "Weight Loss", "Excessive Thirst", 
+      "Chest Tightness", "Palpitations", "Dizziness"
+    ],
+    conditions: [
+      {
+        keywords: ["fever","cough","sore throat","body ache"],
+        diagnosis: "Influenza (Flu)",
+        medicine: "Paracetamol 500 mg",
+        dosage: "1 tablet",
+        frequency: "Every 6 hours",
+        duration: "5 days",
+        warning: "Stay hydrated and rest. Seek medical care if high fever persists."
+      },
+      {
+        keywords: ["runny nose","sneezing","cold","sore throat"],
+        diagnosis: "Common Cold",
+        medicine: "Paracetamol 500 mg",
+        dosage: "1-2 tablets",
+        frequency: "Every 6 hours as needed",
+        duration: "3-5 days",
+        warning: "Symptoms usually resolve naturally. Consult doctor if persistent."
+      },
+      {
+        keywords: ["burning urine","frequent urination","abdominal pain"],
+        diagnosis: "Urinary Tract Infection (UTI)",
+        medicine: "Ciprofloxacin 500 mg",
+        dosage: "1 tablet",
+        frequency: "Twice daily",
+        duration: "7 days",
+        warning: "Complete the full course. Consult doctor if symptoms worsen."
+      },
+      {
+        keywords: ["headache","sensitivity to light","stiff neck","fever","vomiting"],
+        diagnosis: "Meningitis (Suspected)",
+        medicine: "Immediate medical attention required",
+        dosage: "N/A",
+        frequency: "N/A",
+        duration: "N/A",
+        warning: "Seek emergency care immediately."
+      },
+      {
+        keywords: ["chest pain","shortness of breath","palpitations","dizziness","sweating"],
+        diagnosis: "Possible Heart Issue",
+        medicine: "Immediate medical attention required",
+        dosage: "N/A",
+        frequency: "N/A",
+        duration: "N/A",
+        warning: "Seek emergency care immediately."
+      },
+      {
+        keywords: ["yellow eyes","fatigue","nausea","abdominal pain"],
+        diagnosis: "Hepatitis",
+        medicine: "Consult doctor for antiviral treatment",
+        dosage: "N/A",
+        frequency: "N/A",
+        duration: "Depends on type",
+        warning: "Do not self-medicate. Follow doctor's advice."
+      }
+    ]
+  },
+
+  ck: {
+    title: "MKF پەسکریپشنەکان",
+    subtitle: "نیشانی نەخۆشیەکان هەڵبژێرە بۆ وەسڵکردنی دەرمان",
+    analyze: "هەڵسەنگاندن و خەزنکردن",
+    disclaimer: "سەرمایەی MKF Innovations®",
+    symptoms: [
+      "تا","کۆکە","بەڵغەمی زەرد","تاقیکردن","دەردی بەرز","سردرد","خستەوە","نووسین","قەدەغەکردن","هێڵ","ڕەش","خراپ","خستن","تەنفەس کەمبوون","دەردی سێنە","هێڵی تیشک","دووبارەی هێڵ","چاوە زەرد","چاوە سور","ئاشتی شەو","ساردی","سێنەکەوتن","دەردی ناوڕووی","دەردی گوڵ","دەردی پشت","هێشەی چاوی ڕوو","گرینەی سەر","وەزن کەمبوون","تۆڕێکی سیرابی زیاد","قەدەغەکردنی سێنە","لرزش"
+    ],
+    conditions: [
+      {
+        keywords: ["تا","کۆکە","سردرد","دەردی بەرز"],
+        diagnosis: "فلو (Influenza)",
+        medicine: "پەرەسیتامۆل 500 mg",
+        dosage: "1 تابلێت",
+        frequency: "هەر 6 کاتژمێر",
+        duration: "5 ڕۆژ",
+        warning: "خواردن و استراحت بکە. ئەگەر تا گەرمی بەرز هەیە پزیشک ببینە."
+      },
+      {
+        keywords: ["بەڵغەمی زەرد","سێنەکەوتن","ساردی","تاقیکردن"],
+        diagnosis: "ساردی گشتی",
+        medicine: "پەرەسیتامۆل 500 mg",
+        dosage: "1-2 تابلێت",
+        frequency: "هەر 6 کاتژمێر",
+        duration: "3-5 ڕۆژ",
+        warning: "نیشانەکان خۆکارانە چارەسەر دەبن. ئەگەر بەرەوپێش بڕوانە، پزیشک ببینە."
+      },
+      {
+        keywords: ["هێڵی تیشک","دووبارەی هێڵ","دەردی ناوڕووی"],
+        diagnosis: "UTI",
+        medicine: "سێپروفلوکساسین 500 mg",
+        dosage: "1 تابلێت",
+        frequency: "دوو جار لە ڕۆژ",
+        duration: "7 ڕۆژ",
+        warning: "کۆرسەکە تەواو بکە. ئەگەر نەخۆشی زیادبوو پزیشک ببینە."
+      },
+      {
+        keywords: ["سردرد","هێشەی چاوی ڕوو","گرینەی سەر","تا","نووسین"],
+        diagnosis: "مینینجایت (Meningitis)",
+        medicine: "پزیشکی فۆڕسەیەکی کاتێکی فوری",
+        dosage: "N/A",
+        frequency: "N/A",
+        duration: "N/A",
+        warning: "فۆڕسەیەکی پزیشکی خێرا بۆوە."
+      },
+      {
+        keywords: ["دەردی سێنە","تەنفەس کەمبوون","لرزش","قەدەغەکردنی سێنە","ئاشتی شەو"],
+        diagnosis: "کێشەی دڵ",
+        medicine: "پزیشکی فۆڕسەیەکی کاتێکی فوری",
+        dosage: "N/A",
+        frequency: "N/A",
+        duration: "N/A",
+        warning: "فۆڕسەیەکی پزیشکی خێرا بۆوە."
+      },
+      {
+        keywords: ["چاوە زەرد","خستەوە","دەردی ناوڕووی","دەردی گوڵ"],
+        diagnosis: "هێپاتیت",
+        medicine: "پزیشکی فەرمی بۆ دارو",
+        dosage: "N/A",
+        frequency: "N/A",
+        duration: "بە پەیوەندیدا بە جۆر",
+        warning: "خۆت دارو نەکەرەوە. ڕێنمایی پزیشک بەڕێوەبە."
+      }
+    ]
+  }
   };
 
   let currentLang = "en";
@@ -115,3 +228,4 @@ window.onload = function(){
   };
 
 };
+
