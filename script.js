@@ -134,12 +134,12 @@ async function analyze() {
 
   document.getElementById("output").innerHTML = `
     <div class="result">
-      <h3>Diagnosis: ${escapeHtml(resultData.diagnosis)}</h3>
-      <p><strong>Medicine:</strong> ${escapeHtml(resultData.medicine)}</p>
-      <p><strong>Dosage:</strong> ${escapeHtml(resultData.dosage)}</p>
-      <p><strong>Frequency:</strong> ${escapeHtml(resultData.frequency)}</p>
-      <p><strong>Duration:</strong> ${escapeHtml(resultData.duration)}</p>
-      <p class="warning">⚠️ ${escapeHtml(resultData.warning)}</p>
+       <h3>Diagnosis: ${cond.diagnosis || cond.condition}</h3>
+          <p><strong>Medicine:</strong> ${cond.medicine}</p>
+          <p><strong>Dosage:</strong> ${cond.dosage}</p>
+          <p><strong>Frequency:</strong> ${cond.frequency}</p>
+          <p><strong>Duration:</strong> ${cond.duration}</p>
+          <p class="warning">⚠️ ${cond.warning}</p>
     </div>
   `;
 
@@ -168,3 +168,4 @@ function escapeHtml(s){
     .replace(/"/g,'&quot;')
     .replace(/'/g,'&#039;');
 }
+
