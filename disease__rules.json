@@ -1,0 +1,43 @@
+{
+  "Anemia": {
+    "criteria": [
+      {"test": "Hemoglobin", "operator": "<", "value": 13.5},
+      {"test": "Hematocrit", "operator": "<", "value": 41}
+    ],
+    "description": "Low hemoglobin and hematocrit suggest anemia."
+  },
+  "Iron Deficiency": {
+    "criteria": [
+      {"test": "Iron", "operator": "<", "value": 60},
+      {"test": "Ferritin", "operator": "<", "value": 20}
+    ],
+    "description": "Low iron and ferritin indicate iron deficiency."
+  },
+  "Hyperglycemia": {
+    "criteria": [
+      {"test": "Glucose", "operator": ">", "value": 100}
+    ],
+    "description": "High fasting glucose suggests hyperglycemia."
+  },
+  "Hypothyroidism": {
+    "criteria": [
+      {"test": "TSH", "operator": ">", "value": 4.0},
+      {"test": "Free T4", "operator": "<", "value": 0.8}
+    ],
+    "description": "High TSH and low T4 indicate hypothyroidism."
+  },
+  "Hyperlipidemia": {
+    "criteria": [
+      {"test": "LDL", "operator": ">", "value": 100},
+      {"test": "Triglycerides", "operator": ">", "value": 150}
+    ],
+    "description": "High LDL and triglycerides indicate dyslipidemia."
+  },
+  "Renal Dysfunction": {
+    "criteria": [
+      {"test": "Creatinine", "operator": ">", "value": 1.3},
+      {"test": "BUN", "operator": ">", "value": 20}
+    ],
+    "description": "Elevated BUN and creatinine suggest renal impairment."
+  }
+}

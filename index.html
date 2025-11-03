@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MKF Diagnosis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>MKF Diagnosis</h1>
+      <p>Upload your lab PDF or image and get a full analysis</p>
+    </header>
+
+    <section class="upload-section">
+      <input type="file" id="file-input" accept=".pdf,image/*">
+      <button id="analyze-btn">Analyze</button>
+    </section>
+
+    <section class="results-section" id="results">
+      <!-- Results will appear here -->
+    </section>
+  </div>
+
+  <script src="tesseract.min.js"></script>
+  <script src="pdf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

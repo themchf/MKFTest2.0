@@ -1,0 +1,73 @@
+{
+  "CBC": {
+    "WBC": {"min": 4, "max": 11, "unit": "x10^9/L"},
+    "RBC": {"min": 4.5, "max": 5.9, "unit": "x10^12/L"},
+    "Hemoglobin": {"min": 13.5, "max": 17.5, "unit": "g/dL"},
+    "Hematocrit": {"min": 41, "max": 53, "unit": "%"},
+    "Platelets": {"min": 150, "max": 450, "unit": "x10^9/L"}
+  },
+  "Iron Panel": {
+    "Iron": {"min": 60, "max": 170, "unit": "µg/dL"},
+    "Ferritin": {"min": 20, "max": 500, "unit": "ng/mL"},
+    "TIBC": {"min": 250, "max": 450, "unit": "µg/dL"},
+    "Transferrin Saturation": {"min": 20, "max": 50, "unit": "%"}
+  },
+  "Vitamin": {
+    "Vitamin B12": {"min": 200, "max": 900, "unit": "pg/mL"},
+    "Vitamin D": {"min": 30, "max": 100, "unit": "ng/mL"},
+    "Folate": {"min": 2, "max": 20, "unit": "ng/mL"}
+  },
+  "Electrolytes": {
+    "Sodium": {"min": 135, "max": 145, "unit": "mmol/L"},
+    "Potassium": {"min": 3.5, "max": 5.1, "unit": "mmol/L"},
+    "Chloride": {"min": 98, "max": 107, "unit": "mmol/L"},
+    "Calcium": {"min": 8.5, "max": 10.5, "unit": "mg/dL"},
+    "Magnesium": {"min": 1.7, "max": 2.4, "unit": "mg/dL"}
+  },
+  "Renal Function": {
+    "BUN": {"min": 7, "max": 20, "unit": "mg/dL"},
+    "Creatinine": {"min": 0.6, "max": 1.3, "unit": "mg/dL"},
+    "eGFR": {"min": 90, "max": 120, "unit": "mL/min/1.73m2"}
+  },
+  "Liver Function": {
+    "ALT": {"min": 7, "max": 56, "unit": "U/L"},
+    "AST": {"min": 10, "max": 40, "unit": "U/L"},
+    "ALP": {"min": 44, "max": 147, "unit": "U/L"},
+    "Bilirubin": {"min": 0.1, "max": 1.2, "unit": "mg/dL"},
+    "Albumin": {"min": 3.5, "max": 5.0, "unit": "g/dL"}
+  },
+  "Thyroid": {
+    "TSH": {"min": 0.4, "max": 4.0, "unit": "µIU/mL"},
+    "Free T4": {"min": 0.8, "max": 1.8, "unit": "ng/dL"},
+    "Free T3": {"min": 2.3, "max": 4.2, "unit": "pg/mL"}
+  },
+  "Lipid Profile": {
+    "Total Cholesterol": {"min": 125, "max": 200, "unit": "mg/dL"},
+    "LDL": {"min": 0, "max": 100, "unit": "mg/dL"},
+    "HDL": {"min": 40, "max": 60, "unit": "mg/dL"},
+    "Triglycerides": {"min": 0, "max": 150, "unit": "mg/dL"}
+  },
+  "Glucose & HbA1c": {
+    "Glucose": {"min": 70, "max": 100, "unit": "mg/dL"},
+    "HbA1c": {"min": 4.0, "max": 5.6, "unit": "%"}
+  },
+  "Coagulation": {
+    "PT": {"min": 11, "max": 13.5, "unit": "sec"},
+    "INR": {"min": 0.8, "max": 1.2},
+    "aPTT": {"min": 25, "max": 35, "unit": "sec"}
+  },
+  "ESR": {
+    "ESR": {"min": 0, "max": 20, "unit": "mm/hr"}
+  },
+  "Fertility Markers": {
+    "FSH": {"min": 4.7, "max": 21.5, "unit": "mIU/mL"},
+    "LH": {"min": 1.9, "max": 12.5, "unit": "mIU/mL"},
+    "Prolactin": {"min": 4, "max": 23, "unit": "ng/mL"},
+    "AMH": {"min": 1, "max": 9, "unit": "ng/mL"}
+  },
+  "Serology": {
+    "HIV": {"min": 0, "max": 0, "unit": "Negative"},
+    "HCV": {"min": 0, "max": 0, "unit": "Negative"},
+    "HBsAg": {"min": 0, "max": 0, "unit": "Negative"}
+  }
+}
