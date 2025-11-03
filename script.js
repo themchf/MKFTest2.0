@@ -16,7 +16,6 @@ window.onload = function(){
 
   // --- Multi-language content ---
   const LANG = {
-   const LANG = {
   en: {
     title: "MKF Prescriptions",
     subtitle: "Select your symptoms to get recommended medicine",
@@ -152,6 +151,7 @@ window.onload = function(){
         warning: "خۆت دارو نەکەرەوە. ڕێنمایی پزیشک بەڕێوەبە."
       }
     ]
+  }
   };
 
   let currentLang = "en";
@@ -227,5 +227,6 @@ window.onload = function(){
   };
 
 };
+
 
 
