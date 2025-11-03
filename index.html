@@ -9,8 +9,12 @@
 <body>
 <div class="container">
   <header>
-    <h1>MKF Prescriptions</h1>
-    <p class="muted">Select your symptoms to get recommended medicine</p>
+    <h1 id="title">MKF Prescriptions</h1>
+    <select id="langSelect" style="margin-bottom:12px;">
+      <option value="en">English</option>
+      <option value="ck">Central Kurdish</option>
+    </select>
+    <p class="muted" id="subtitle">Select your symptoms to get recommended medicine</p>
   </header>
 
   <div class="card">
@@ -27,7 +31,7 @@
   <a class="admin-link" href="admin.html" target="_blank">Admin Dashboard</a>
 </div>
 
-<!-- Firebase v9 compat for browser -->
+<!-- Firebase v9 compat -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
