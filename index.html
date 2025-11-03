@@ -1,29 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MKF Diagnosis</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MKF Prescriptions</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* app-specific overrides */
+    .container { max-width: 720px; margin: 36px auto; padding: 22px; }
+    header h1 { font-size: 1.6rem; }
+    .symptom-grid { gap: 10px; margin-top: 8px; }
+    .card.center { display:flex; justify-content:center; }
+    #output { margin-top:18px; }
+    .result { padding:14px; border-radius:12px; background:linear-gradient(180deg,#050506,#0b0b0c); box-shadow: 0 6px 24px rgba(0,0,0,0.6);}
+    .small-muted { color:var(--muted); font-size:0.9rem; margin-top:8px; text-align:center; }
+    a.admin-link { display:block; text-align:center; margin-top:12px; color:var(--cyan); text-decoration:none; }
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>MKF Diagnosis</h1>
-      <p>Upload your lab PDF or image and get a full analysis</p>
+      <h1>MKF Prescriptions</h1>
+      <p class="muted">Select symptoms (1–6). We'll match and recommend medicine. Always consult a doctor.</p>
     </header>
 
-    <section class="upload-section">
-      <input type="file" id="file-input" accept=".pdf,image/*">
-      <button id="analyze-btn">Analyze</button>
-    </section>
+    <div class="card">
+      <div id="symptomGrid" class="symptom-grid"></div>
+    </div>
 
-    <section class="results-section" id="results">
-      <!-- Results will appear here -->
-    </section>
+    <div class="card center">
+      <button id="analyzeBtn">Analyze & Save</button>
+    </div>
+
+    <div id="output"></div>
+
+    <p class="disclaimer">Property of MKF Innovations®</p>
+    <a class="admin-link" href="admin.html" target="_blank">Admin dashboard (protected)</a>
   </div>
 
-  <script src="tesseract.min.js"></script>
-  <script src="pdf.min.js"></script>
-  <script src="script.js"></script>
+  <div id="toast" class="toast">Saved successfully!</div>
+
+  <!-- module script (ES modules) -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>
