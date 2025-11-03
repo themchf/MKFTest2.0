@@ -152,7 +152,6 @@ window.onload = function(){
         warning: "خۆت دارو نەکەرەوە. ڕێنمایی پزیشک بەڕێوەبە."
       }
     ]
-  }
   };
 
   let currentLang = "en";
@@ -228,4 +227,5 @@ window.onload = function(){
   };
 
 };
+
 
