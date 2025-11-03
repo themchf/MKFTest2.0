@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MKF Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container{ max-width:960px; margin:28px auto; padding:22px; }
+    .login-card{ max-width:480px; margin:48px auto; padding:18px; }
+    .flex-row{ display:flex; gap:12px; align-items:center; }
+    .top-bar{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .controls{ display:flex; gap:8px; align-items:center; }
+    .badge{ background:#0b0b0c; padding:8px 12px; border-radius:10px; font-weight:700; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="container" id="root">
+    <header>
+      <h1 style="color:var(--accent)">MKF Admin</h1>
+      <p class="muted">Protected admin panel — login required.</p>
+    </header>
+
+    <!-- LOGIN -->
+    <div id="loginWrap" class="card login-card">
+      <label for="password">Admin password</label>
+      <div class="flex-row" style="margin-top:8px">
+        <input id="password" class="search-input" type="password" placeholder="Enter password">
+        <button id="loginBtn">Unlock</button>
+      </div>
+      <p class="small-muted" style="margin-top:8px">This is client-side password protection. For production use Firebase Auth or server-side checks.</p>
+    </div>
+
+    <!-- DASHBOARD (hidden until login) -->
+    <div id="dashWrap" style="display:none;">
+      <div class="top-bar">
+        <div class="controls">
+          <input id="searchInput" class="search-input" placeholder="Search symptoms / diagnosis / medicine">
+          <button id="refreshBtn" class="small-btn">Refresh</button>
+        </div>
+        <div>
+          <span class="badge" id="countBadge">0 records</span>
+          <button id="logoutBtn" class="small-btn">Logout</button>
+        </div>
+      </div>
+
+      <div style="height:16px"></div>
+
+      <div class="card card-list" id="list"></div>
+    </div>
+
+  </div>
+
+  <div id="toast" class="toast">Action done</div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
